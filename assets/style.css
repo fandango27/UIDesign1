@@ -4,11 +4,64 @@
 	box-sizing: border-box;
 }
 
-/* adjusting fonts */
+.name {
+	display:flex;
+	gap:30px;
+	font-family:'Space Grotesk', sans-serif;
+	font-size:8rem;
+	font-weight:700;
+}
 
+.name span:nth-child(1){
+	transform:translateY(-20px);
+}
+
+.name span:nth-child(2){
+	transform:translateY(25px);
+}
+
+.name span:nth-child(3){
+	transform:translateY(-10px);
+}
+
+.name span:nth-child(4){
+	transform:translateY(40px);
+}
+
+.name span:nth-child(5){
+	transform:translateY(-30px);
+}
+
+.name span:nth-child(6){
+	transform:translateY(15px);
+}
+
+.name span:nth-child(7){
+	transform:translateY(-5px);
+}
+/* adjusting fonts */
 body {
-	font-family: -apple-system, BlinkMacSystemFont, helvetica, arial, sans-serif;
-	transition: background 500ms ease;
+	background: #000;
+	color: #fff;
+
+	font-family: 'Inter', sans-serif;
+}
+
+a {
+	color: #ff3b30;
+	text-decoration: none;
+	border-bottom: 1px solid #ff3b30;
+}
+
+a:hover {
+	color: white;
+	border-bottom-color: white;
+}
+
+h1 {
+    font-size: 7rem;
+    font-weight: 700;
+    letter-spacing: 0.9em;
 }
 
 p, li {
@@ -37,24 +90,44 @@ img {
 
 /* uncomment the code below to set the grid */
 
-/*#grid {
+#grid {
 	display: grid;
 	grid-template-columns: 1fr 1fr;
-}
-
-body {
-	overflow: hidden;
-}
-
-.scroll {
-	padding:  20px;
-	overflow: scroll;
 	height: 100vh;
 }
 
+.scroll {
+	padding: 60px;
+	height: 100vh;
+	overflow-y: auto;
+}
+
 #left-column {
+	border-right: 1px solid rgba(255,255,255,.08);
+}
+
+h1 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 8rem;
+    font-weight: 700;
+}
+
+h2 {
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
+    margin-top: 50px;
+    margin-bottom: 20px;
+
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
 }
 
 #right-column {
-	background: #333;
-}*/
+	padding: 40px;
+}
+
+#right-column {
+	background: rgba(255,255,255,.03);
+}
+

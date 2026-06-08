@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+
+<style>
+body{
+  margin:0;
+  width:100vw;
+  height:100vh;
+  overflow:hidden;
+  background:black;
+  color:white;
+  font-family:Helvetica, Arial, sans-serif;
+}
+
+#clock{
+  position:absolute;
+  left:50%;
+  top:50%;
+
+  font-size:22vw;
+  font-weight:100;
+
+  transform:translate(-50%,-50%) scale(1);
+
+  transition:transform .4s ease;
+}
+
+#dot{
+  position:absolute;
+
+  width:20px;
+  height:20px;
+
+  border-radius:50%;
+  background:white;
+
+  transition:
+    left 1s linear,
+    top 1s linear;
+}
+</style>
+</head>
+
+<body>
+
+<div id="clock">00</div>
+<div id="dot"></div>
+
+<script>
+
+const clock = document.getElementById("clock");
+const dot = document.getElementById("dot");
+
+function updateClock(){
+
+  const now = new Date();
+
+  const minute =
+    String(now.getMinutes()).padStart(2,"0");
+
+  const second = now.getSeconds();
+
+  clock.textContent = minute;
+
+  // pulse
+  clock.style.transform =
+    "translate(-50%,-50%) scale(1.12)";
+
+  setTimeout(()=>{
+    clock.style.transform =
+      "translate(-50%,-50%) scale(1)";
+  },400);
+
+  const w = window.innerWidth;
+  const h = window.innerHeight;
+
+  const cycle = Math.floor(second / 4);
+
+  const step = 25;
+
+  const positions = [
+
+    // top left → moves right
+    [
+      cycle * step,
+      0
+    ],
+
+    // bottom right → moves left
+    [
+      w - 20 - cycle * step,
+      h - 20
+    ],
+
+    // bottom left → moves up
+    [
+      0,
+      h - 20 - cycle * step
+    ],
+
+    // top right → moves down
+    [
+      w - 20,
+      cycle * step
+    ]
+  ];
+
+  const pos = positions[second % 4];
+
+  dot.style.left = pos[0] + "px";
+  dot.style.top = pos[1] + "px";
+}
+
+updateClock();
+setInterval(updateClock,1000);
+
+</script>
+
+</body>
+</html>
