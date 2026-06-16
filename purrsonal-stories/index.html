@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mood Garden</title>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&display=swap" rel="stylesheet">    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="catHouse">
+    
+    <img src="images/room-background.png" id="roomBackground">
+
+    <div class="houseTitle">
+        <h1>🐾 Purrsonal Stories</h1>
+     <p>A cozy home for stories and support.</p>
+    </div>
+
+    <button id="newPostBtn">
+        + Move Into The House
+    </button>
+
+    <div id="catArea"></div>
+</div>
+
+<div id="postModal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Share your story</h2>
+
+        <input id="catName" placeholder="Cat Name">
+
+        <select id="category">
+            <option>Anxiety</option>
+            <option>Sadness</option>
+            <option>Stress</option>
+            <option>Burnout</option>
+            <option>Loneliness</option>
+            <option>Hope</option>
+        </select>
+
+            <h3>Choose Your Cat</h3>
+
+            <div id="catSelector">
+
+            <button class="catChoice" data-img="flower-cat.png"><img src="images/flower-cat.png"></button>
+            <button class="catChoice" data-img="gray-cat.png"><img src="images/gray-cat.png"></button>
+            <button class="catChoice" data-img="fragile-cat.png"><img src="images/fragile-cat.png"></button>
+            <button class="catChoice" data-img="phone-cat.png"><img src="images/phone-cat.png"></button>
+            <button class="catChoice" data-img="siamese-cat.png"><img src="images/siamese-cat.png"></button>
+            <button class="catChoice" data-img="blue-cat.png"><img src="images/blue-cat.png"></button>
+            <button class="catChoice" data-img="laying-cat.png"><img src="images/laying-cat.png"></button>
+            <button class="catChoice" data-img="sunglasses-cat.png"><img src="images/sunglasses-cat.png"></button>
+            <button class="catChoice" data-img="pillow-cat.png"><img src="images/pillow-cat.png"></button>
+            <button class="catChoice" data-img="sitting-cat.png"><img src="images/sitting-cat.png"></button>
+            <button class="catChoice" data-img="ginger-cat.png"><img src="images/ginger-cat.png"></button>
+            <button class="catChoice" data-img="heart-cat.png"><img src="images/heart-cat.png"></button>
+            <button class="catChoice" data-img="kitten-cat.png"><img src="images/kitten-cat.png"></button>
+
+            </div>
+
+        <textarea id="story" placeholder="Share your experience..."></textarea>
+
+        <input id="email" placeholder="Contact Email">
+
+        <button onclick="addPost()">Move In</button>
+    </div>
+</div>
+
+<div id="storyModal" class="modal">
+    <div class="modal-content">
+        <span class="closeStory">&times;</span>
+
+        <h2 id="storyCatName"></h2>
+
+        <p id="storyText"></p>
+
+        <p><strong>Category:</strong> <span id="storyCategory"></span></p>
+
+        <p>
+            <a id="storyEmail" href="#">
+                Contact Author
+            </a>
+        </p>
+
+        <button id="deleteBtn">
+            Delete Post
+        </button>
+
+    </div>
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
